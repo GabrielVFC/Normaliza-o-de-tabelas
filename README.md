@@ -8,7 +8,7 @@ O banco de dados foi dividido em quatro tabelas principais:
 4. Inscrições: Relaciona estudantes, disciplinas e professores, incluindo as notas.
 
 ## Configuração
-1. Criando a Tabela de Estudantes
+## 1. Criando a Tabela de Estudantes
 Esta tabela armazena os dados básicos de cada aluno.
 
 ```sql
@@ -31,7 +31,7 @@ INSERT INTO Estudantes (NumeroEstudante, NomeEstudante, Curso) VALUES
 (42346, 'Bernardo', 'Matemática'),
 (54323, 'Correia', 'Estatística');
 ```
-2. Criando a Tabela de Disciplinas
+## 2. Criando a Tabela de Disciplinas
 Esta tabela contém informações sobre as disciplinas disponíveis.
 
 ```sql
@@ -57,7 +57,7 @@ INSERT INTO Disciplinas (NumeroDisciplina, NomeDisciplina) VALUES
 (12, 'Geometria'),
 (16, 'Lógica');
 ```
-3. Criando a Tabela de Professores
+## 3. Criando a Tabela de Professores
 Esta tabela registra os professores e suas categorias.
 
 ```sql
@@ -82,7 +82,7 @@ INSERT INTO Professores (CodigoProfessor, NomeProfessor, CategoriaProfessor) VAL
 (43, 'Paulo Pinto', 'AS'),
 (32, 'Nuno Neves', 'AE');
 ```
-4. Criando a Tabela de Inscrições
+## 4. Criando a Tabela de Inscrições
 Essa tabela relaciona os estudantes, as disciplinas e os professores, incluindo as notas.
 
 ```sql
@@ -118,8 +118,8 @@ INSERT INTO Inscricoes (NumeroEstudante, NumeroDisciplina, CodigoProfessor, Nota
 (54323, 4, 21, 11),
 (54323, 8, 32, 10);
 ```
-## Consultas SQL
-1. Listar notas de um estudante específico
+# Consultas SQL
+## 1. Listar notas de um estudante específico
 Este comando exibe as disciplinas cursadas, os professores responsáveis e as notas de um aluno específico.
 
 ```sql
@@ -130,7 +130,7 @@ JOIN Disciplinas D ON I.NumeroDisciplina = D.NumeroDisciplina
 JOIN Professores P ON I.CodigoProfessor = P.CodigoProfessor
 WHERE E.NomeEstudante = 'Antunes';
 ```
-2. Obter o desempenho médio em cada disciplina
+## 2. Obter o desempenho médio em cada disciplina
 Este comando calcula a média das notas em cada disciplina.
 
 ```sql
@@ -140,7 +140,7 @@ JOIN Disciplinas D ON I.NumeroDisciplina = D.NumeroDisciplina
 WHERE I.Nota IS NOT NULL
 GROUP BY D.NomeDisciplina;
 ```
-3. Listar disciplinas com seus professores
+## 3. Listar disciplinas com seus professores
 Este comando exibe todas as disciplinas e os professores que as ministram.
 
 ```sql
